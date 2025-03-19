@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import edu.kis.powp.jobs2d.drivers.DriverManager;
+import edu.kis.powp.jobs2d.drivers.adapter.Job2dDriverAbstractAdapter;
+import edu.kis.powp.jobs2d.magicpresets.FiguresJane;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
 import edu.kis.powp.jobs2d.figures;
 
@@ -24,5 +26,9 @@ public class SelectTestFigureOptionListener implements ActionListener {
 		}else if(e.getActionCommand().equals(figures.FIGURE_JOE_2.getCommand())){
 			FiguresJoe.figureScript2(driverManager.getCurrentDriver());
 		}
+		else if(e.getActionCommand().equals(figures.FIGURE_JANE.getCommand())){
+			FiguresJane.figureScript(new Job2dDriverAbstractAdapter(driverManager.getCurrentDriver()));
+		}
 	}
 }
+
