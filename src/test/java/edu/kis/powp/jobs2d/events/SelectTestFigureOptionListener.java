@@ -7,7 +7,7 @@ import edu.kis.powp.jobs2d.drivers.DriverManager;
 import edu.kis.powp.jobs2d.drivers.adapter.Job2dDriverAbstractAdapter;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJane;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
-import edu.kis.powp.jobs2d.figures;
+import edu.kis.powp.jobs2d.Figures;
 
 
 public class SelectTestFigureOptionListener implements ActionListener {
@@ -21,12 +21,12 @@ public class SelectTestFigureOptionListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		if(e.getActionCommand().equals(figures.FIGURE_JOE_1.getCommand())){
+		if(e.getActionCommand().equals(Figures.FIGURE_JOE_1.getCommand())){
 			FiguresJoe.figureScript1(driverManager.getCurrentDriver());
-		}else if(e.getActionCommand().equals(figures.FIGURE_JOE_2.getCommand())){
+		}else if(e.getActionCommand().equals(Figures.FIGURE_JOE_2.getCommand())){
 			FiguresJoe.figureScript2(driverManager.getCurrentDriver());
 		}
-		else if(e.getActionCommand().equals(figures.FIGURE_JANE.getCommand())){
+		else if(e.getActionCommand().equals(Figures.FIGURE_JANE.getCommand())){
 			FiguresJane.figureScript(new Job2dDriverAbstractAdapter(driverManager.getCurrentDriver()));
 		}
 	}
