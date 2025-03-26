@@ -42,6 +42,23 @@ public class SelectTestFigureOptionListener implements ActionListener {
             complexCommand.addCommand(new OperateToCommand(30, -30));
             complexCommand.addCommand(new OperateToCommand(30, 30));
             complexCommand.execute(driverManager.getCurrentDriver());
+        }else if (e.getActionCommand().equals(Figures.FIGURE_CUSTOM_TR.getCommand())) {
+            ComplexCommand complexCommand = new ComplexCommand();
+
+            complexCommand.addCommand(new SetPositionCommand(90,0 ));
+            complexCommand.addCommand(new OperateToCommand(0, 90));
+            complexCommand.addCommand(new OperateToCommand(-90, 0));
+            complexCommand.addCommand(new OperateToCommand(90, 0));
+            complexCommand.execute(driverManager.getCurrentDriver());
+        }else if (e.getActionCommand().equals(Figures.FIGURE_CUSTOM_RT.getCommand())) {
+            ComplexCommand complexCommand = new ComplexCommand();
+
+            complexCommand.addCommand(new SetPositionCommand(60, 30));
+            complexCommand.addCommand(new OperateToCommand(-60, 30));
+            complexCommand.addCommand(new OperateToCommand(-60, -30));
+            complexCommand.addCommand(new OperateToCommand(60, -30));
+            complexCommand.addCommand(new OperateToCommand(60, 30));
+            complexCommand.execute(driverManager.getCurrentDriver());
         }
     }
 }
